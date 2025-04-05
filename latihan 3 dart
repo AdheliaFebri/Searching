@@ -1,0 +1,26 @@
+void sequentialSearchAll(List<int> arr, int key) {
+  int comparisons = 0;
+  List<int> foundIndexes = [];
+
+  for (int i = 0; i < arr.length; i++) {
+    comparisons++;
+    if (arr[i] == key) {
+      foundIndexes.add(i);
+    }
+  }
+
+  if (foundIndexes.isEmpty) {
+    print("Elemen tidak ditemukan dengan $comparisons perbandingan");
+  } else {
+    print("Elemen ditemukan pada indeks: ${foundIndexes.join(', ')}");
+    print("Jumlah ditemukan: ${foundIndexes.length}");
+    print("Total perbandingan yang dilakukan: $comparisons");
+  }
+}
+void main() {
+  List<int> data = [5, 2, 7, 2, 9, 2, 4, 2];
+  int kunci = 2;
+
+  print("Mencari semua elemen yang sama dengan: $kunci");
+  sequentialSearchAll(data, kunci);
+}
